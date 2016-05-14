@@ -1,0 +1,44 @@
+README
+
+The Naive Bayes is run by, in the naivebayes directory, running first
+	$ python naivebayes_logwriter.py -d func
+and then
+	$ python naivebayse_classifier.py
+As an example "logfreq_data" contains the printed information from
+naivebayes_logwriter.py. The model prints the log-likelihood that each author
+wrote the text. It also prints the confusion matrix given the model only trained
+on 90% of the data and tested on the other 10%. The model uses +1 smoothing. See
+the "naivebayes_logwriter.py" and "naivebayes_classifier.py" self-documentation
+for further details.
+In addition, if instead of with the "func" option, one writes
+    $ python naivebayes_logwriter.py -d all
+the program will use the authors' combined vocabulary to run the Naive Bayes
+model instead of the just the functional words. See the writeup for more notes
+on the distinction. Binning changes the results and is discussed in the writeup.
+Both "naivebayes_logwriter.py" and "naivebayes_classifier.py" are
+self documented as well.
+
+
+There are additional files in this directory. Their contents and function are
+documented here.
+
+    *corpus
+    These files contain the scraped texts by each author concatenated. This is
+read into naivebayes_logwriter.py to build the probability distribution (with +1
+smoothing) for each author.
+
+    *corpus2
+    These files contain the scraped texts by each author concatenated with each
+text separated by a line "#newtext". This is read into naivebayes_classifer.py
+to build the confusion matrix.
+
+    functional_words_de
+    The file contains German functional words. Some lines containing verbs,
+contain each of the conjugations for each person in a given tense. The nouns',
+articles', and pronouns' lines contain each declension. The selection of these
+words is discussed in the writeup.
+
+    systemprogram
+The file contains the text of "The Earliest System Program of German
+Idealism". This is the text of which the classifier is trying to find the
+author.
