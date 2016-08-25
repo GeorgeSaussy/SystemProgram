@@ -1,9 +1,0 @@
-README
-
-These files are only included here for completion. Their functionality cannot be
-guaranteed, as integration with the web is time sensitive. They have been
-untested since they were first run because their runtime can be a few hours.
-However, we felt these files should be included in case error in the corpera
-could be explained by some of the parsing here. To run the program, in this
-directory run the command
-    $ python download.py
