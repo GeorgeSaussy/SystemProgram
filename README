@@ -46,33 +46,6 @@ See "naivebayes/README" for further documentation. Both
 well.
 
 
-SVM
-In the directory "svm" is a directory "libsvm-master". This directory is a copy
-of the LIBSVM suite by Chih-Chung Chang and Chih-Jen Lin. (Some documentation
-for the software can be found at csie.ntu.edu.tw/~cjlin/libsvm/ and the GitHub
-repo for the software can be found at github.com/cjlin1/libsvm .) To run the
-SVM, cd into the svm directory. There, run first
-    $ python svm_data_writer.py
-Then run
-    $ libsvm-master/svm-train -s 0 -t 1 -d 2 all_svm_data all_svm_data_model
-and finally
-    $  libsvm-master/svm-predict sysprogram_svm_data all_svm_data_model sysprogram_svm_prediction
-The file "sysprogram_svm_prediction" now contains the output of the SVM's
-prediction. 1 corresponds to Hegel, 2 to Hölderlin, and  o Schelling.
-To replicate the testing of the SVM model, call
-    $ libsvm-master/svm-train -s 0 -t 1 -d 2 training_svm_data training_svm_data_model
-and then
-    $ libsvm-master/svm-predict testing_svm_data training_svm_data_model testing_svm_prediction
-If everything went well, you should get an accuracy of 55.2083%. Reviewing
-testing_svm_prediction should reveal every datum was classified as 2, or as by
-Hölderlin. This indicated the data was not seperable. The failure of this model
-is discussed in the writeup.
-See "svm/README" for further documentation. "svm_data_writer.py" is
-self-documented as well. For further documentation on LIBSVM,
-"svm/libsvm-master/README" has an outline. In addition, calling any of the
-LIBSVM binaries without options will print help.
-
-
 Perceptron
 The perceptron is run by, in the "perceptron" sub-directory using the command
     $ python perceptron.py --eta [float] --itrs [int]
